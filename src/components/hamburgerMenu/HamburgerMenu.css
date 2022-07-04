@@ -1,0 +1,49 @@
+:root {
+    --menu-bar-width: 60px;
+    --menu-bar-height: 10px;
+}
+
+.hamburgerMenu {
+    width: var(--menu-bar-width);
+    height: calc(var(--menu-bar-height) *6);
+    position: relative;
+}
+
+#bun {
+    background-color: #4c8476;
+    position: relative;
+    width: var(--menu-bar-width);
+    height: var(--menu-bar-height);
+    top: calc(var(--menu-bar-height)*2);
+}
+
+#bun::before {
+    top: -20px;
+}
+
+#bun::before,
+#bun::after {
+    background-color: #fdfdfd;
+    display: block;
+    content: "";
+    width: var(--menu-bar-width);
+    height: var(--menu-bar-height);
+    position: absolute;
+    transition: all 0.35s ease-in-out;
+    bottom: -20px;
+}
+
+.hamburgerMenu:hover #bun {
+    background-color: hsl(0,0%,1000%);
+    transition: all 0.05s ease-in-out;
+}
+
+.hamburgerMenu:hover #bun::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.hamburgerMenu:hover #bun::after {
+    transform: rotate(-45deg);
+    bottom: 0;
+}

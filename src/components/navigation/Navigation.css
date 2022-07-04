@@ -1,0 +1,105 @@
+.separator {
+    background-color: #8696ae;
+    height: 10px;
+    max-width: 1440px;
+}
+
+
+.navigation {
+    max-width: 1440px;
+    display: flex;
+    background-color: #364156;
+    flex-direction: column;
+    border-radius: 10px 10px 10px 10px;
+}
+.upper {
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    height: 130px;
+
+}
+
+.upper h1 {
+    color: white;
+    margin-left: 10px;
+    font-size: 35px;
+}
+
+.title {
+    display: flex;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.searchMenu {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.toggleBurger {
+    display: flex;
+    align-content: center;
+    border-radius: 10px;
+}
+
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.toggleBurger {
+    display: flex;
+    align-content: center;
+}
+
+.temperatureToggle {
+    margin: 20px;
+}
+
+.hamburgerMenu {
+   margin: 10px 10px 10px 0;
+}
+
+nav a,
+nav a:visited,
+nav a:active {
+    color: red;
+}
+
+button {
+    border: none;
+    padding: 8px 16px;
+    background-color: #394055;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+button + button {
+    margin-left: 8px;
+}
+
+button:hover {
+    cursor: pointer;
+    color: #394055;
+    background-color: #4c8476;
+}
+
+a,
+a:visited,
+a:active {
+    color: #0d3b66;
+}
+
+a:hover {
+    color: #ea7e1f;
+}
+
+.tabRow {
+    display: flex;
+    justify-content: space-around;
+}

@@ -1,0 +1,22 @@
+.GeneralPage {
+    display: grid;
+    margin-top: 10px;
+    gap: 20px;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.GeneralPage h1 {
+    width: 100%;
+    color: white;
+    text-align: center;
+    background-color: #4c8476;
+}
+h2 {
+    width: 100%;
+    color: white;
+    text-align: center;
+    background-color: #4c8476;
+    border-radius: 10px;
+}
+
