@@ -1,6 +1,5 @@
 import {fetchDailyData} from "../helpers/apiCalls";
-import React, {useEffect, useState} from 'react';
-import kelvinToCelcius from "../helpers/kelvinToCelcius";
+import React, {useContext, useEffect} from 'react';
 import Tile from "../components/tiles/Tile";
 import SummaryTile from "../components/tiles/SummaryTile";
 import iconMapper from "../helpers/iconMapper";
@@ -12,20 +11,22 @@ import PercipitationTile from "../components/tiles/PercipitationTile";
 import timeConverter from "../helpers/timeConverter";
 import windDirection from "../helpers/windDirection";
 import windDirectionIconMapper from "../helpers/windDirectionIconMapper";
-
+import {TempContext} from "../context/TempProvider";
 
 function Home({weatherData, setWeatherData}) {
 
+    const {kelvinToMetric} = useContext(TempContext);
+    const {freedomToNormal} = useContext(TempContext);
 
     useEffect(() => {
             async function refreshData() {
 
+                // Default values zodat ook zonder query de app volledig beschikbaar is
                 let lat = 52.092876
                 let lon = 5.104480
 
                 const data = await fetchDailyData(lat, lon)
                 setWeatherData(data.data);
-
             }
 
             refreshData()
@@ -43,8 +44,8 @@ function Home({weatherData, setWeatherData}) {
                               colspan={2}
                               rowspan={2}>
 
-                            <SummaryTile temp={kelvinToCelcius(weatherData.main.temp)}
-                                         feelsAs={kelvinToCelcius(weatherData.main.feels_like)}
+                            <SummaryTile temp={kelvinToMetric(weatherData.main.temp)}
+                                         feelsAs={kelvinToMetric(weatherData.main.feels_like)}
                                          icon={iconMapper(weatherData.weather[0].main)}
                                          description={weatherData.weather[0].description}
                             />
@@ -55,7 +56,7 @@ function Home({weatherData, setWeatherData}) {
                               rowspan={1}>
 
                             <WindTile direction={windDirection(weatherData.wind.deg)}
-                                      speed={weatherData.wind.speed}
+                                      speed={freedomToNormal(weatherData.wind.speed)}
                                       icon={windDirectionIconMapper(weatherData.wind.deg)}
                             />
                         </Tile>
@@ -77,16 +78,15 @@ function Home({weatherData, setWeatherData}) {
                                           lon={weatherData.coord.lon}
                                           lat={weatherData.coord.lat}
                                           country={weatherData.sys.country}
-
                             />
 
                         </Tile>
+
                         <Tile title="Zontijden"
                               colspan={1}
                               rowspan={1}>
                             <SundetailTile sunRise={timeConverter(weatherData.sys.sunrise)}
                                            sunSet={timeConverter(weatherData.sys.sunset)}
-
                             />
                         </Tile>
 
@@ -97,15 +97,10 @@ function Home({weatherData, setWeatherData}) {
 
                             />
                         </Tile>
-
                     </div>
                 </>}
-
-
         </>
     );
 }
 
 export default Home;
-//https://reactjs.org/docs/state-and-lifecycle.html
-//https://www.freecodecamp.org/news/fetch-data-react/

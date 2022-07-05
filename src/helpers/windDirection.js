@@ -31,7 +31,7 @@ function windDirection(windDegrees) {
     } else if (direction <= 315) {
         return windDegrees + "°  WNW";
     } else if (direction <= 337.5) {
-        return windDegrees + +"°  NW";
+        return windDegrees + "°  NW";
     } else {
         return windDegrees + "°  NNW";
     }

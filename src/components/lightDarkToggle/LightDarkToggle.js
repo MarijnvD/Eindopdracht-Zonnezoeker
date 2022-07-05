@@ -1,9 +1,8 @@
-import React, { useState} from 'react';
+import React, {useState} from 'react';
 import './LightDarkToggle.css';
 
 function LightDarkToggle() {
     const [checked, toggleChecked] = useState(false);
-
 
     return (
         <div className="lightSwitch">

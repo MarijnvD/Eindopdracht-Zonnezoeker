@@ -1,17 +1,15 @@
 import React, {useContext} from 'react';
 import SearchBar from "../searchBar/SearchBar";
-import HamburgerMenu from "../hamburgerMenu/HamburgerMenu";
 import TemperatureToggle from "../temperatureToggle/TemperatureToggle";
 import LightDarkToggle from "../lightDarkToggle/LightDarkToggle";
 import './Navigation.css';
-import { useHistory } from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import {AuthContext} from "../../context/AuthContext";
-import { ReactComponent as Logo } from '../../assets/icons/logo.svg';
+import {ReactComponent as Logo} from '../../assets/icons/logo.svg';
 
-
-function Navigation({ appName,tab1, tab2, tab3, tab4, tab5, setWeatherData, setPredictiveWeatherData }) {
+function Navigation({appName, tab1, tab2, tab3, tab4, tab5, setWeatherData, setPredictiveWeatherData}) {
     const history = useHistory();
-    const { isAuth } = useContext(AuthContext);
+    const {isAuth} = useContext(AuthContext);
     return (
         <nav className="navigation">
 
@@ -21,26 +19,26 @@ function Navigation({ appName,tab1, tab2, tab3, tab4, tab5, setWeatherData, setP
                     <h1>{appName}</h1>
                 </div>
 
-
-                <div className="searchMenu"><SearchBar setWeatherData={setWeatherData} setPredictiveWeatherData={setPredictiveWeatherData}/></div>
+                <div className="searchMenu"><SearchBar setWeatherData={setWeatherData}
+                                                       setPredictiveWeatherData={setPredictiveWeatherData}/></div>
                 <div className="toggleBurger">
                     <TemperatureToggle/>
                     <LightDarkToggle/>
-                    {/*<div className="hamburgerMenu"><HamburgerMenu/></div>*/}
-                    {isAuth?
-                    <button
-                        type="button"
-                        onClick={() => history.push('/Profile')}
-                    >
-                        Profile
-                    </button>
+
+                    {isAuth ?
+                        <button
+                            type="button"
+                            onClick={() => history.push('/Profile')}
+                        >
+                            Profile
+                        </button>
                         :
-                    <button
-                        type="button"
-                        onClick={() => history.push('/SignIn')}
-                    >
-                        Inloggen
-                    </button>}
+                        <button
+                            type="button"
+                            onClick={() => history.push('/SignIn')}
+                        >
+                            Inloggen
+                        </button>}
                 </div>
             </div>
 
@@ -54,7 +52,7 @@ function Navigation({ appName,tab1, tab2, tab3, tab4, tab5, setWeatherData, setP
                     >
                         {tab1}
                     </button>
-                    { isAuth &&
+                    {isAuth &&
                         <>
                             <button
                                 type="button"

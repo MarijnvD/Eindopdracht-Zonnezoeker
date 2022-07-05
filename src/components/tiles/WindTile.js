@@ -17,7 +17,7 @@ function WindTile({direction, speed, icon }) {
                 </tr>
                 <tr>
                     <th>Wind snelheid:</th>
-                    <td>{speed} m/s</td>
+                    <td>{speed}</td>
                 </tr>
                 </tbody>
             </table>

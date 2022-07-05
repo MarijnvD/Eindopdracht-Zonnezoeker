@@ -3,17 +3,20 @@ import './SearchBar.css';
 import {fetchDailyData, fetchData, fetchLocationData} from "../../helpers/apiCalls";
 
 
-function SearchBar({ setWeatherData, setPredictiveWeatherData  }) {
+function SearchBar({setWeatherData, setPredictiveWeatherData}) {
 
     const [query, setQuery] = useState('');
 
     async function onFormSubmit(e) {
         e.preventDefault();
-        try{
+        try {
             const [lat, lon] = await fetchLocationData(query)
             const data = await fetchDailyData(lat, lon)
+
             setWeatherData(data.data)
+
             const predictiveData = await fetchData(lat, lon)
+
             setPredictiveWeatherData(predictiveData.data)
         } catch (e) {
             console.error(e)

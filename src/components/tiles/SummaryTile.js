@@ -1,7 +1,7 @@
 import React from 'react';
 import './SummaryTile.css';
 
-function SummaryTile({temp, feelsAs, icon, description }) {
+function SummaryTile({temp, feelsAs, icon, description}) {
 
     return (
         <>

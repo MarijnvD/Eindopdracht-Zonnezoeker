@@ -3,8 +3,8 @@ import './TemperatureToggle.css';
 import {TempContext} from "../../context/TempProvider";
 
 const TemperatureToggle = () => {
-    const [checked, toggleChecked] = useState(true);
-    const { toggleTemp } = useContext(TempContext);
+    const [checked, toggleChecked] = useState(false);
+    const {toggleTemp} = useContext(TempContext);
 
     useEffect(() => {
         toggleTemp();

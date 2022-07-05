@@ -16,8 +16,6 @@ function windDirectionIconMapper(windDegrees) {
     const druiven = banaan.split(" ")
     const input = druiven[2]
 
-    console.log(input)
-
     switch (input) {
         case 'N':
         case 'NNO':

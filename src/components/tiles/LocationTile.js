@@ -3,34 +3,34 @@ import './LocationTile.css';
 import {ReactComponent as Location} from "../../assets/icons/location.svg";
 
 
-function LocationTile({location, lon, lat, country, icon }) {
+function LocationTile({location, lon, lat, country}) {
 
     return (
         <div className="locationDetails">
             <table>
                 <tbody>
                 <tr>
-                    <th>Locatie: </th>
+                    <th>Locatie:</th>
                     <td>{location}</td>
                 </tr>
                 <tr>
-                    <th>Lengte: </th>
+                    <th>Lengte:</th>
                     <td>{lon}</td>
                 </tr>
                 <tr>
-                    <th>Breedte: </th>
+                    <th>Breedte:</th>
                     <td>{lat}</td>
                 </tr>
                 <tr>
-                    <th>Land: </th>
+                    <th>Land:</th>
                     <td>{country}</td>
                 </tr>
                 </tbody>
             </table>
+
             <div className="icon">
                 <Location/>
             </div>
-
         </div>
     );
 }

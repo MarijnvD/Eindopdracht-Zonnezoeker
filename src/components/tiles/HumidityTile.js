@@ -1,6 +1,6 @@
 import React from 'react';
 import './HumidityTile.css';
-
+import {ReactComponent as Moisture} from "../../assets/icons/moisture.svg";
 
 function HumidityTile({humidity, pressure}) {
 
@@ -18,6 +18,10 @@ function HumidityTile({humidity, pressure}) {
                 </tr>
                 </tbody>
             </table>
+
+            <div className="icon">
+                <Moisture/>
+            </div>
 
         </div>
     );

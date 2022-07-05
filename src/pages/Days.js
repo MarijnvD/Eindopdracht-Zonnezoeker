@@ -1,6 +1,7 @@
 import React from 'react';
 import {useEffect} from "react";
 import {fetchData} from "../helpers/apiCalls";
+import Tile from "../components/tiles/Tile";
 
 
 function Days({predictiveWeatherData, setPredictiveWeatherData}) {
@@ -22,22 +23,22 @@ function Days({predictiveWeatherData, setPredictiveWeatherData}) {
     return (
 
         <>
-            {/*{Object.keys(predictiveWeatherData).length > 0 &&*/}
-            {/*    <>*/}
-            {/*        <h2>Day page</h2>*/}
-            {/*        <div className="GeneralPage">*/}
+            {Object.keys(predictiveWeatherData).length > 0 &&
+                <>
+                    <h2>Day page</h2>
+                    <div className="GeneralPage">
 
-            {/*            <Tile title="Samenvatting"*/}
-            {/*                  colspan={2}*/}
-            {/*                  rowspan={2}>*/}
+                        <Tile title="Samenvatting"
+                              colspan={3}
+                              rowspan={2}>
 
-            {/*               <p>WIP</p>*/}
-            {/*            </Tile>*/}
+                           <p>WIP</p>
+                        </Tile>
 
 
 
-            {/*        </div>*/}
-            {/*    </>}*/}
+                    </div>
+                </>}
 
 
         </>

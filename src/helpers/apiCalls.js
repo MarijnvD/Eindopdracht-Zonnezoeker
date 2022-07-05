@@ -35,7 +35,6 @@ export async function fetchLocationData(searchCity) {
         console.log("Location result ;",LocationResult);
         return [LocationResult.data[0].lat, LocationResult.data[0].lon];
 
-
     } catch (e) {
         console.error(e);
         console.log("Gefaald op ophalen LON LAN")

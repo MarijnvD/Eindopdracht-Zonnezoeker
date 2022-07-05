@@ -2,8 +2,7 @@ import React from 'react';
 import './SundetailsTile.css';
 import {ReactComponent as Sun} from "../../assets/icons/sun.svg";
 
-
-function SundetailTile({sunRise, sunSet}) {
+function SunDetailTile({sunRise, sunSet}) {
 
     return (
         <div className="sunDetails">
@@ -19,12 +18,12 @@ function SundetailTile({sunRise, sunSet}) {
                 </tr>
                 </tbody>
             </table>
+
             <div className="icon">
                 <Sun/>
             </div>
-
         </div>
     );
 }
 
-export default SundetailTile;
+export default SunDetailTile;

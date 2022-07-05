@@ -2,18 +2,19 @@ import React from 'react';
 import './PercipitationTile.css';
 import {ReactComponent as Rain} from '../../assets/icons/rain.svg';
 
-
-function PercipitationTile({percipitation}) {
+function PrecipitationTile({precipitation}) {
 
     return (
         <div className="percipitationdetails">
             <div className="rainContent">
-                <p>Geen neerslag verwacht!</p>
-                <div className="icon"><Rain/></div>
+                <p>{precipitation}</p>
             </div>
 
+            <div className="icon">
+                <Rain/>
+            </div>
         </div>
     );
 }
 
-export default PercipitationTile;
+export default PrecipitationTile;
