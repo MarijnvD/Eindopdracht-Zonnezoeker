@@ -5,7 +5,6 @@ import {
     Route,
 } from 'react-router-dom';
 import Home from "./pages/Home";
-import Air from "./pages/Air";
 import Days from "./pages/Days";
 import Weekend from "./pages/Weekend";
 import Month from "./pages/Month";
@@ -19,6 +18,7 @@ import Privacy from "./pages/Privacy";
 import ChangePassword from "./pages/ChangePassword";
 import ChangeEmail from "./pages/ChangeEmail";
 import UploadAvatar from "./pages/UploadAvatar";
+import Hours from "./pages/Hours";
 
 function App() {
 
@@ -39,7 +39,7 @@ function App() {
             <Navigation
                 appName="ZonneZoeker"
                 tab1="Home"
-                tab2="Lucht"
+                tab2="Uren"
                 tab3="10 Dagen"
                 tab4="Weekend"
                 tab5="Maand"
@@ -54,11 +54,11 @@ function App() {
                     <Route exact path="/">
                         <Home weatherData={weatherData} setWeatherData={setWeatherData}/>
                     </Route>
-                    <Route exact path ="/air">
-                        {isAuth ? <Air/> : <Redirect to="/" />}
+                    <Route exact path ="/Hours">
+                        {isAuth ? <Hours predictiveWeatherData={predictiveWeatherData} setPredictiveWeatherData={setPredictiveWeatherData}/> : <Redirect to="/" />}
                     </Route>
                     <Route exact path="/Days">
-                        {isAuth ? <Days predictiveWeatherData={predictiveWeatherData} setPredictiveWeatherData={setPredictiveWeatherData}/> : <Redirect to="/" />}
+                        {isAuth ? <Days weatherData={weatherData} setWeatherData={setWeatherData}/> : <Redirect to="/" />}
                     </Route>
                     <Route exact path="/Weekend">
                         {isAuth ? <Weekend/> : <Redirect to="/" />}

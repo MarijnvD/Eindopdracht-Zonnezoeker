@@ -1,30 +1,34 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import axios from "axios";
 import Tile from "../components/tiles/Tile";
-import {useForm} from "react-hook-form";
+
 
 function SignUp() {
 
-    const {register, handleSubmit, formState: {errors}} = useForm()
+    const [username, setUsername] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
     const history = useHistory()
 
-    async function onFormSubmit(data) {
-
-        console.log(data)
+    async function handleSubmit(e) {
+        e.preventDefault()
         try {
             const check = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/signup',
                 {
-                    email: data.emailId,
-                    password: data.passwordId,
-                    username: data.userId,
+                    email: email,
+                    password: password,
+                    username: username,
+                    role: ["user", "admin"]
+
                 })
             history.push('/signin')
             console.log(check)
 
-        } catch (data) {
-            console.error(data)
+        } catch (e) {
+            console.error(e)
         }
+
     }
 
     return (
@@ -42,10 +46,9 @@ function SignUp() {
                         herleidbare informatie die uitdrukkelijk en vrijwillig door de bezoeker ter beschikking is
                         gesteld.</p>
 
-                    <p>Wil je weten wat we doen aan je privacy? Je kunt onze privacy verklaring <Link
-                        to="/privacy">hier</Link> inzien.</p>
+                    <p>Wil je weten wat we doen aan je privacy? Je kunt onze privacy verklaring <Link to="/privacy">hier</Link> inzien.</p>
 
-                    <form onSubmit={handleSubmit(onFormSubmit)}>
+                    <form onSubmit={handleSubmit}>
                         <fieldset>
                             <legend>Gegevens</legend>
 
@@ -54,14 +57,10 @@ function SignUp() {
                                 <input
                                     type="email"
                                     id="details-email"
-                                    {...register("emailId", {
-                                        required: {
-                                            value: true,
-                                            message: "Dit veld is verplicht!"
-                                        },
-                                    })}
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    name="email-ID"
                                 />
-                                {errors.emailId && <p>{errors.emailId.message}</p>}
                             </label>
 
                             <label htmlFor="details-password">
@@ -69,18 +68,11 @@ function SignUp() {
                                 <input
                                     type="password"
                                     id="details-password"
-                                    {...register("passwordId", {
-                                        required: {
-                                            value: true,
-                                            message: "Dit veld is verplicht!"
-                                        },
-                                        minLength: {
-                                            value: 3,
-                                            message: "Moet minimaal 3 karakters lang zijn!"
-                                        }
-                                    })}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    value={password}
+                                    name="password-ID"
+
                                 />
-                                {errors.passwordId && <p>{errors.passwordId.message}</p>}
                             </label>
 
                             <label htmlFor="details-userName">
@@ -88,24 +80,19 @@ function SignUp() {
                                 <input
                                     type="text"
                                     id="details-userName"
-                                    {...register("userId", {
-                                        required: {
-                                            value: true,
-                                            message: "Dit veld is verplicht!"
-                                        },
-                                        minLength: {
-                                            value: 6,
-                                            message: "Dit veld moet minimaal 6 karakters lang zijn!"
-                                        }
-                                    })}
+                                    onChange={(e) => setUsername(e.target.value)}
+                                    value={username}
+                                    name="user-ID"
+
                                 />
-                                {errors.userId && <p>{errors.userId.message}</p>}
                             </label>
                             <button
                                 type="submit">
                                 Versturen
                             </button>
                         </fieldset>
+
+
                     </form>
 
                     <p>Heb je al een account? Je kunt je <Link to="/signin">hier</Link> inloggen.</p>

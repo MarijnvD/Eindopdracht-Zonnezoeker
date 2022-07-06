@@ -59,7 +59,7 @@ function Navigation({appName, tab1, tab2, tab3, tab4, tab5, setWeatherData, setP
                         <>
                             <button
                                 type="button"
-                                onClick={() => history.push('/Air')}
+                                onClick={() => history.push('/Hours')}
                             >
                                 {tab2}
                             </button>
