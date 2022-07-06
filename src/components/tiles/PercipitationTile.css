@@ -1,10 +1,6 @@
-.rainContent{
+.precipitationDetails{
     display: flex;
     justify-content: space-around;
 
 }
 
-.icon {
-    height:100px;
-    width:100px;
-}

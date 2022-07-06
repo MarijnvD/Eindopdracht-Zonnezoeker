@@ -16,12 +16,22 @@ import SignUp from "./pages/SignUp";
 import Profile from "./pages/Profile";
 import {AuthContext} from "./context/AuthContext";
 import Privacy from "./pages/Privacy";
+import ChangePassword from "./pages/ChangePassword";
+import ChangeEmail from "./pages/ChangeEmail";
+import UploadAvatar from "./pages/UploadAvatar";
 
 function App() {
 
     const { isAuth } = useContext(AuthContext);
     const [weatherData, setWeatherData] = useState("");
     const [predictiveWeatherData, setPredictiveWeatherData] = useState("");
+    const [error, toggleError] = useState(false)
+    const [avatar, setAvatar] = useState(" ")
+    const [toast, setToast] = useState(false)
+
+    if (error){
+        console.log("ALLES IS FOUT")
+    }
 
     return (
 
@@ -35,7 +45,10 @@ function App() {
                 tab5="Maand"
                 setWeatherData={setWeatherData}
                 setPredictiveWeatherData={setPredictiveWeatherData}
+                toggleError={toggleError}
             />
+
+
 
                 <Switch>
                     <Route exact path="/">
@@ -63,7 +76,16 @@ function App() {
                         <Privacy />
                     </Route>
                     <Route exact path="/Profile">
-                        {isAuth ? <Profile /> : <Redirect to="/" />}
+                        {isAuth ? <Profile avatar={avatar} /> : <Redirect to="/" />}
+                    </Route>
+                    <Route exact path="/ChangePassword">
+                        {isAuth ? <ChangePassword /> : <Redirect to="/" />}
+                    </Route>
+                    <Route exact path="/ChangeEmail">
+                        {isAuth ? <ChangeEmail /> : <Redirect to="/" />}
+                    </Route>
+                    <Route exact path="/UploadAvatar">
+                        {isAuth ? <UploadAvatar avatar={avatar} setAvatar={setAvatar} /> : <Redirect to="/" />}
                     </Route>
                 </Switch>
         </>

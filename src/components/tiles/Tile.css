@@ -3,6 +3,7 @@
     width: 100%;
     background-color:#8696ae;
     border-radius: 10px;
+    flex-basis: auto;
 }
 
 .colspan2 {
@@ -33,4 +34,5 @@
     flex-direction: column;
     justify-content: space-around;
     padding: 20px  20px 20px;
+    flex-shrink: 2;
 }

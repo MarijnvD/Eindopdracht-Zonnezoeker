@@ -3,7 +3,7 @@ import './SearchBar.css';
 import {fetchDailyData, fetchData, fetchLocationData} from "../../helpers/apiCalls";
 
 
-function SearchBar({setWeatherData, setPredictiveWeatherData}) {
+function SearchBar({setWeatherData, setPredictiveWeatherData, toggleError}) {
 
     const [query, setQuery] = useState('');
 

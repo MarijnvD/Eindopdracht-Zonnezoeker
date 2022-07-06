@@ -38,5 +38,6 @@ export async function fetchLocationData(searchCity) {
     } catch (e) {
         console.error(e);
         console.log("Gefaald op ophalen LON LAN")
+        window.alert("GEEN LAT LON GEVONDEN")
     }
 }

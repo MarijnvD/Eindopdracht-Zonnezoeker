@@ -5,9 +5,9 @@ import {ReactComponent as Rain} from '../../assets/icons/rain.svg';
 function PrecipitationTile({precipitation}) {
 
     return (
-        <div className="percipitationdetails">
+        <div className="precipitationDetails">
             <div className="rainContent">
-                <p>{precipitation}</p>
+                <p>Neerslag: {precipitation}</p>
             </div>
 
             <div className="icon">

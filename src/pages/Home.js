@@ -65,8 +65,8 @@ function Home({weatherData, setWeatherData}) {
                               colspan={1}
                               rowspan={1}>
 
-                            <HumidityTile
-
+                            <HumidityTile humidity={weatherData.main.humidity}
+                                          pressure={weatherData.main.pressure}
                             />
                         </Tile>
 

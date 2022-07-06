@@ -7,7 +7,7 @@ import {useHistory} from 'react-router-dom';
 import {AuthContext} from "../../context/AuthContext";
 import {ReactComponent as Logo} from '../../assets/icons/logo.svg';
 
-function Navigation({appName, tab1, tab2, tab3, tab4, tab5, setWeatherData, setPredictiveWeatherData}) {
+function Navigation({appName, tab1, tab2, tab3, tab4, tab5, setWeatherData, setPredictiveWeatherData, toggleError}) {
     const history = useHistory();
     const {isAuth} = useContext(AuthContext);
     return (
@@ -20,7 +20,10 @@ function Navigation({appName, tab1, tab2, tab3, tab4, tab5, setWeatherData, setP
                 </div>
 
                 <div className="searchMenu"><SearchBar setWeatherData={setWeatherData}
-                                                       setPredictiveWeatherData={setPredictiveWeatherData}/></div>
+                                                       setPredictiveWeatherData={setPredictiveWeatherData}
+                                                       toggleError={toggleError}
+                />
+                </div>
                 <div className="toggleBurger">
                     <TemperatureToggle/>
                     <LightDarkToggle/>
