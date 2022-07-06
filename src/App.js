@@ -19,6 +19,7 @@ import ChangePassword from "./pages/ChangePassword";
 import ChangeEmail from "./pages/ChangeEmail";
 import UploadAvatar from "./pages/UploadAvatar";
 import Hours from "./pages/Hours";
+import ContactForm from "./pages/ContactForm";
 
 function App() {
 
@@ -29,9 +30,6 @@ function App() {
     const [avatar, setAvatar] = useState(" ")
     const [toast, setToast] = useState(false)
 
-    if (error){
-        console.log("ALLES IS FOUT")
-    }
 
     return (
 
@@ -42,7 +40,7 @@ function App() {
                 tab2="Uren"
                 tab3="10 Dagen"
                 tab4="Weekend"
-                tab5="Maand"
+                tab5="Contact"
                 setWeatherData={setWeatherData}
                 setPredictiveWeatherData={setPredictiveWeatherData}
                 toggleError={toggleError}
@@ -74,6 +72,9 @@ function App() {
                     </Route>
                     <Route exact path="/Privacy">
                         <Privacy />
+                    </Route>
+                    <Route exact path="/ContactForm">
+                        <ContactForm />
                     </Route>
                     <Route exact path="/Profile">
                         {isAuth ? <Profile avatar={avatar} /> : <Redirect to="/" />}

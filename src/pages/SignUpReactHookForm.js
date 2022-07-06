@@ -14,21 +14,19 @@ function SignUp() {
     async function handleSubmit(e) {
         e.preventDefault()
         try {
-            const check = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/signup',
+            await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/signup',
                 {
                     email: email,
                     password: password,
                     username: username,
                     role: ["user", "admin"]
-
                 })
+
             history.push('/signin')
-            console.log(check)
 
         } catch (e) {
             console.error(e)
         }
-
     }
 
     return (
@@ -46,7 +44,8 @@ function SignUp() {
                         herleidbare informatie die uitdrukkelijk en vrijwillig door de bezoeker ter beschikking is
                         gesteld.</p>
 
-                    <p>Wil je weten wat we doen aan je privacy? Je kunt onze privacy verklaring <Link to="/privacy">hier</Link> inzien.</p>
+                    <p>Wil je weten wat we doen aan je privacy? Je kunt onze privacy verklaring <Link
+                        to="/privacy">hier</Link> inzien.</p>
 
                     <form onSubmit={handleSubmit}>
                         <fieldset>
@@ -71,7 +70,6 @@ function SignUp() {
                                     onChange={(e) => setPassword(e.target.value)}
                                     value={password}
                                     name="password-ID"
-
                                 />
                             </label>
 
@@ -83,7 +81,6 @@ function SignUp() {
                                     onChange={(e) => setUsername(e.target.value)}
                                     value={username}
                                     name="user-ID"
-
                                 />
                             </label>
                             <button
@@ -91,8 +88,6 @@ function SignUp() {
                                 Versturen
                             </button>
                         </fieldset>
-
-
                     </form>
 
                     <p>Heb je al een account? Je kunt je <Link to="/signin">hier</Link> inloggen.</p>

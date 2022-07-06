@@ -15,7 +15,11 @@ function Navigation({appName, tab1, tab2, tab3, tab4, tab5, setWeatherData, setP
 
             <div className="upper">
                 <div className="title">
-                    <Logo className="logo"/>
+                    <button  type="button"
+                             onClick={() => history.push('/')}
+                    >
+                        <Logo className="logo"/>
+                    </button>
                     <h1>{appName}</h1>
                 </div>
 
@@ -77,10 +81,11 @@ function Navigation({appName, tab1, tab2, tab3, tab4, tab5, setWeatherData, setP
                             </button>
                             <button
                                 type="button"
-                                onClick={() => history.push('/Month')}
+                                onClick={() => history.push('/ContactForm')}
                             >
                                 {tab5}
                             </button>
+
                         </>
                     }
                 </div>

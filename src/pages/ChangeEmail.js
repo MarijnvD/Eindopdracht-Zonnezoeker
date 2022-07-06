@@ -28,7 +28,7 @@ function ChangeEmail() {
 
         } catch (e) {
 
-            console.log("FOUT IN WACHTWOORD WIJZIGEN")
+            console.error("FOUT IN WACHTWOORD WIJZIGEN")
             console.error(e)
         }
     }

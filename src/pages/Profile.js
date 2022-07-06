@@ -89,8 +89,15 @@ function Profile({avatar}) {
 export default Profile;
 
 
-// #TODO Functionaliteit toevoegen om een foto toe te kunnen voegen
 // #TODO User input toevoegen aan de ratings
 // #TODO Lichtmode/Darkmode aan de praat krijgen
+// #TODO Contact formulier toevoegen
+
+// #TODO Vragenlijstje Tessa;
+// #TODO voorspelling pagina maken met een map method
+// #TODO Promises afhandelen?
+// #TODO Hoe ontbrekende data toevoegen uit de API?
+// #TODO Gekke API Results
+
 
 

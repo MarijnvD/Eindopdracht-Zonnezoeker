@@ -12,7 +12,7 @@ function ChangePassword() {
     async function handlePasswordSubmit(e) {
         e.preventDefault();
         try {
-            const responseData = await axios.put(`https://frontend-educational-backend.herokuapp.com/api/user`,
+            await axios.put(`https://frontend-educational-backend.herokuapp.com/api/user`,
                 {
                     password: newPassword,
                     repeatedPassword: repeatNewPassword},
@@ -22,11 +22,8 @@ function ChangePassword() {
                     }
                 })
 
-            console.log("response data wachtwoord",responseData)
-
         } catch (e) {
-
-            console.log("FOUT IN WACHTWOORD WIJZIGEN")
+            console.error("FOUT IN WACHTWOORD WIJZIGEN")
             console.error(e)
         }
     }
@@ -36,7 +33,6 @@ function ChangePassword() {
             <h2>Aanpassen gebruiksgegevens</h2>
 
             <div className="GeneralPage">
-
 
                 <Tile title="Wachtwoord wijzigen"
                       colspan={3}

@@ -20,3 +20,37 @@ h2 {
     border-radius: 10px;
 }
 
+.reactForm fieldset{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    padding: 10px;
+    margin: 10px;
+
+}
+
+.reactForm fieldset label {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 2px;
+
+}
+
+.reactForm fieldset label input {
+    width: 80%;
+    min-width: 100px;
+    align-content: center;
+    padding-bottom: 5px;
+}
+
+.errorHandling {
+    color: #c24040;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.reactForm button {
+    margin-top: 10px;
+
+}

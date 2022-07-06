@@ -33,7 +33,7 @@ function UploadAvatar({avatar,setAvatar}) {
 
         } catch (e) {
 
-            console.log("FOUT IN Avatar WIJZIGEN")
+            console.error("Fout in Avatar wijzigen")
             console.error(e)
         }
     }

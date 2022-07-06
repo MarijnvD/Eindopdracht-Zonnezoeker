@@ -19,13 +19,13 @@ function SignIn() {
                 username: userName,
                 password: password
             })
-            console.log("token; ", responseData)
+
             login(responseData.data.accessToken);
             history.push('/Profile');
 
         } catch (e) {
 
-            console.log("DIT GING NIET GOED")
+            console.error("Error bij inloggen")
             console.error(e)
         }
     }

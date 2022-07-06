@@ -4,10 +4,14 @@ import {ReactComponent as Rain} from '../../assets/icons/rain.svg';
 
 function PrecipitationTile({precipitation}) {
 
+    const noRain = "Geen neerslag verwacht!"
+
     return (
+
         <div className="precipitationDetails">
             <div className="rainContent">
-                <p>Neerslag: {precipitation}</p>
+
+                <p>{noRain}{precipitation}</p>
             </div>
 
             <div className="icon">

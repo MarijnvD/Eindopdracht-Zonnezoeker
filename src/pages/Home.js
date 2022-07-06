@@ -93,7 +93,7 @@ function Home({weatherData, setWeatherData}) {
                         <Tile title="Neerslag"
                               colspan={1}
                               rowspan={1}>
-                            <PercipitationTile precipitation={weatherData.wind.deg}
+                            <PercipitationTile precipitation={weatherData.rain}
 
                             />
                         </Tile>
