@@ -103,7 +103,7 @@ function SignUp() {
                                 </label>
                                 <button
                                     type="submit">
-                                    Versturen
+                                    Registratie voltooien
                                 </button>
                             </fieldset>
                         </form>

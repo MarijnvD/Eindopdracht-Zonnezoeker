@@ -98,6 +98,7 @@ export default Profile;
 // #TODO Promises afhandelen?
 // #TODO Hoe ontbrekende data toevoegen uit de API?
 // #TODO Gekke API Results
+// #TODO Alternatieve usecases?
 
 
 

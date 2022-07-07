@@ -1,70 +1,88 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  ```sh
+  
+  ______                      ______          _              
+ |___  /                     |___  /         | |             
+    / / ___  _ __  _ __   ___   / / ___   ___| | _____ _ __  
+   / / / _ \| '_ \| '_ \ / _ \ / / / _ \ / _ \ |/ / _ \ '__| 
+  / /_| (_) | | | | | | |  __// /_| (_) |  __/   <  __/ |    
+ /_____\___/|_| |_|_| |_|\___/_____\___/ \___|_|\_\___|_|    
+                                                             
+                                                             
 
-## Available Scripts
+  ```
 
-In the project directory, you can run:
+ZonneZoeker helps you find the optimal day for your favorite activity, shows you the current weather data and helps you plan around it!
 
-### `npm start`
+# Table of contents
+1. [About the Project](#1-about-the-project)
+   1. [Build with](#11-built-with)
+2. [Getting Started](#2-getting-started)
+   1. [Prerequisites](#21-prerequisites)
+   2. [Initial Installation](#22-initial-installation)
+3. [Running the app](#3-running-the-app)
+   1. [Start](#31-start)
+   2. [Build](#32-build)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 1. About the project
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Are you planning an outside activity? are you afraid the weather will ruin it? with ZonneZoeker you can make sure!
 
-### `npm test`
+With our patented rating system we calculate the ratings for a diverse selection of activities.
+ZonneZoeker can also be used as a normal weather application...boring!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1.1 Built With
 
-### `npm run build`
+* [React.js](https://reactjs.org/)
+* [Novi Educational Backend](https://github.com/hogeschoolnovi/novi-educational-backend-documentation)
+* Blood, sweat & royal amounts of tears
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 2. Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To get your own ZonneZoeker up and running follow these simple example steps.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2.1 Prerequisites
 
-### `npm run eject`
+To initialise ZonneZoeker, you need to install npm. <br/>
+You also need an API-key from openweather.com
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2.2 Initial Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Get an API Key from https://openweathermap.org/ (For a limited time only, a complimentary key is provided for you!)
+2. Clone ZonneZoeker;
+   ```sh
+   git clone https://github.com/MarijnvD/Eindopdracht-Zonnezoeker.git
+   ```
+3. Create a .env file in the root folder with the following content;
+   ```sh
+    REACT_APP_API_KEY=***************
+   ```
+   Replace the * 's  for the https://openweathermap.org/ api key, without spaces or quotes. (When the complimentary time is over)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+5. Install NPM-packages;
+   ```sh
+   npm install
+   ```
 
-## Learn More
+## 3. Running the app
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 3.1 Start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Enter the following command in the terminal;
 
-### Code Splitting
+```sh
+npm run start
+```
+http://localhost:3000 should automatically open in your standard browser
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 3.2 Build
+Builds the app for production to the build folder. 
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```sh
+npm run build
+```

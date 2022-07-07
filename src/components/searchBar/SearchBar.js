@@ -20,7 +20,7 @@ function SearchBar({setWeatherData, setPredictiveWeatherData, toggleError}) {
             setPredictiveWeatherData(predictiveData.data)
         } catch (e) {
             console.error(e)
-            window.alert("Controleer de spelling van de plaatsnaam, huidige plaatsnaam niet gevonden!")
+            window.alert("Huidige plaatsnaam niet gevonden! Controleer de spelling van de plaatsnaam. ")
         }
     }
 
