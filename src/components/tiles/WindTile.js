@@ -1,8 +1,7 @@
 import React from 'react';
 import './WindTile.css';
 
-
-function WindTile({direction, speed, icon }) {
+function WindTile({direction, speed, icon}) {
 
     return (
         <div className="windDetails">

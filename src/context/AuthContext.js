@@ -1,11 +1,11 @@
 import React, {createContext, useEffect, useState} from 'react';
-import { useHistory } from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import axios from "axios";
 import tokenValidator from "../helpers/tokenValidator";
 
 export const AuthContext = createContext({});
 
-function AuthContextProvider({ children }) {
+function AuthContextProvider({children}) {
     const [auth, toggleAuth] = useState({
             user: null,
             isAuth: false,
@@ -21,13 +21,16 @@ function AuthContextProvider({ children }) {
 
         if (jwt && tokenValidator(jwt)) {
             console.log("Token wordt gechecked op geldigheid & user data wordt opnieuw opgehaald")
-            async function getValidatedData(token){
-                try{
+
+            async function getValidatedData(token) {
+                try {
                     const userData = await axios.get(`https://frontend-educational-backend.herokuapp.com/api/user`,
-                        {headers:{
+                        {
+                            headers: {
                                 "Content-Type": "application/json",
                                 Authorization: `Bearer ${token}`,
-                            }})
+                            }
+                        })
 
                     toggleAuth({
                         isAuth: true,
@@ -39,14 +42,13 @@ function AuthContextProvider({ children }) {
                         status: "done"
                     });
 
-                } catch(e) {
+                } catch (e) {
 
                     console.error();
                     logout();
                 }
             }
             getValidatedData(jwt)
-
         } else {
             toggleAuth({
                 isAuth: false,
@@ -65,20 +67,22 @@ function AuthContextProvider({ children }) {
     }
 
     function logout() {
-        toggleAuth({isAuth: false, user: null, status:"done"});
+        toggleAuth({isAuth: false, user: null, status: "done"});
         history.push('/');
         localStorage.removeItem("accesToken")
 
-        console.log("User is uitgelogged en accestoken is verwijderd uit de local storage")
+        console.log("User is uitgelogd en de acces token is verwijderd uit de local storage")
     }
 
-    async function getData(token){
-        try{
+    async function getData(token) {
+        try {
             const userData = await axios.get(`https://frontend-educational-backend.herokuapp.com/api/user`,
-                {headers:{
+                {
+                    headers: {
                         "Content-Type": "application/json",
                         Authorization: `Bearer ${token}`,
-                    }})
+                    }
+                })
 
             toggleAuth({
                 isAuth: true,
@@ -90,7 +94,7 @@ function AuthContextProvider({ children }) {
                 status: "done"
             });
 
-        }catch(e){
+        } catch (e) {
             console.error()
         }
         history.push('/profile');
@@ -98,7 +102,7 @@ function AuthContextProvider({ children }) {
 
     const contextData = {
         isAuth: auth.isAuth,
-        user : auth.user,
+        user: auth.user,
         login: login,
         logout: logout,
     };

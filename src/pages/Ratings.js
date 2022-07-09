@@ -12,7 +12,7 @@ import programmingRating from "../helpers/ratingHelpers/programmingRating";
 import windSurfRating from "../helpers/ratingHelpers/windSurfRating";
 
 
-function Days({weatherData, setWeatherData}) {
+function Ratings({weatherData, setWeatherData}) {
 
     useEffect(() => {
             async function refreshData() {
@@ -28,7 +28,6 @@ function Days({weatherData, setWeatherData}) {
             refreshData()
         }
         , []);
-
 
     return (
         <>
@@ -93,4 +92,4 @@ function Days({weatherData, setWeatherData}) {
     );
 }
 
-export default Days;
+export default Ratings;

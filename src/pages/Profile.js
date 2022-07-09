@@ -10,7 +10,7 @@ function Profile({avatar}) {
     const {user, logout} = useContext(AuthContext);
     const history = useHistory();
 
-    const base = "data:image/png;base64,"+avatar
+    const base = "data:image/png;base64," + avatar
 
     return (
         <>
@@ -18,17 +18,20 @@ function Profile({avatar}) {
 
             <div className="GeneralPage">
                 <Tile title="Avatar"
-                      colspan={1}
+                      colspan={2}
                       rowspan={2}>
 
                     <section>
-                        <p>Username: {user.username}</p>
-                        <p>Email: {user.email}</p>
-                        <p>ID: {user.id}</p>
-                        <div>
-                            {avatar !==" " &&
+                        <p>
+                            Welkom op je eigen stukje ZonneZoeker!
+                            Als geregistreerde gebruiker kan je gebruik maken van onze voorspellingen en we geven zelfs
+                            ratings aan verschillende activiteiten!
+                        </p>
 
-                            <img src={base} alt="triforce" />}
+                        <div>
+                            {avatar !== " " &&
+
+                                <img src={base} alt="UserImage"/>}
                         </div>
                     </section>
 
@@ -39,6 +42,25 @@ function Profile({avatar}) {
                         onClick={() => history.push('/UploadAvatar')}
                     >
                         Foto uploaden
+                    </button>
+                </Tile>
+
+                <Tile title="Account diensten"
+                      colspan={1}
+                      rowspan={2}
+                >
+                    <button
+                        type="button"
+                        onClick={() => history.push('/ChangePassword')}
+                    >
+                        Wachtwoord Wijzigen
+                    </button>
+
+                    <button
+                        type="button"
+                        onClick={() => history.push('/ChangeEmail')}
+                    >
+                        Email Wijzigen
                     </button>
                 </Tile>
 
@@ -62,43 +84,12 @@ function Profile({avatar}) {
                     </button>
                 </Tile>
 
-                <Tile title="Overig"
-                      colspan={1}
-                      rowspan={2}>
 
-                    <button
-                        type="button"
-                        onClick={() => history.push('/ChangePassword')}
-                    >
-                        Wachtwoord Wijzigen
-                    </button>
-
-                    <button
-                        type="button"
-                        onClick={() => history.push('/ChangeEmail')}
-                    >
-                        Email Wijzigen
-                    </button>
-
-                </Tile>
             </div>
         </>
     );
 }
 
 export default Profile;
-
-
-// #TODO User input toevoegen aan de ratings
-// #TODO Lichtmode/Darkmode aan de praat krijgen
-// #TODO Contact formulier toevoegen
-
-// #TODO Vragenlijstje Tessa;
-// #TODO voorspelling pagina maken met een map method
-// #TODO Promises afhandelen?
-// #TODO Hoe ontbrekende data toevoegen uit de API?
-// #TODO Gekke API Results
-// #TODO Alternatieve usecases?
-
 
 

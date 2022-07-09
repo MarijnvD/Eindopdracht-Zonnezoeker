@@ -5,9 +5,7 @@ import {
     Route,
 } from 'react-router-dom';
 import Home from "./pages/Home";
-import Days from "./pages/Days";
-import Weekend from "./pages/Weekend";
-import Month from "./pages/Month";
+import Ratings from "./pages/Ratings";
 import Navigation from "./components/navigation/Navigation";
 import {useContext, useState} from "react";
 import SignIn from "./pages/SignIn";
@@ -30,23 +28,18 @@ function App() {
     const [avatar, setAvatar] = useState(" ")
     const [toast, setToast] = useState(false)
 
-
     return (
-
         <>
             <Navigation
                 appName="ZonneZoeker"
                 tab1="Home"
                 tab2="Uren"
-                tab3="10 Dagen"
-                tab4="Weekend"
-                tab5="Contact"
+                tab3="Cijfers"
+                tab4="Contact"
                 setWeatherData={setWeatherData}
                 setPredictiveWeatherData={setPredictiveWeatherData}
                 toggleError={toggleError}
             />
-
-
 
                 <Switch>
                     <Route exact path="/">
@@ -55,14 +48,8 @@ function App() {
                     <Route exact path ="/Hours">
                         {isAuth ? <Hours predictiveWeatherData={predictiveWeatherData} setPredictiveWeatherData={setPredictiveWeatherData}/> : <Redirect to="/" />}
                     </Route>
-                    <Route exact path="/Days">
-                        {isAuth ? <Days weatherData={weatherData} setWeatherData={setWeatherData}/> : <Redirect to="/" />}
-                    </Route>
-                    <Route exact path="/Weekend">
-                        {isAuth ? <Weekend/> : <Redirect to="/" />}
-                    </Route>
-                    <Route exact path="/Month">
-                        {isAuth ? <Month/> : <Redirect to="/" />}
+                    <Route exact path="/Ratings">
+                        {isAuth ? <Ratings weatherData={weatherData} setWeatherData={setWeatherData}/> : <Redirect to="/" />}
                     </Route>
                     <Route exact path="/SignIn">
                         <SignIn />

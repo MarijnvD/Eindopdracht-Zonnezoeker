@@ -6,9 +6,7 @@ import axios from "axios";
 export async function fetchData(lat, lon) {
 
     try {
-        const predictiveWeatherData = await axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_API_KEY}&lang=nl`);
-        console.log("data return APICALL", predictiveWeatherData);
-        return predictiveWeatherData
+        return await axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_API_KEY}&lang=nl`)
 
     } catch (e) {
         console.error(e);

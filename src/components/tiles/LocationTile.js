@@ -2,7 +2,6 @@ import React from 'react';
 import './LocationTile.css';
 import {ReactComponent as Location} from "../../assets/icons/location.svg";
 
-
 function LocationTile({location, lon, lat, country}) {
 
     return (

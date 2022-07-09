@@ -2,7 +2,7 @@ function timeConverter(UNIX_timestamp){
     const a = new Date(UNIX_timestamp * 1000);
 
     const hour = a.getHours();
-    const min = a.getMinutes();
+    const min = (a.getMinutes()<10?'0':'') + a.getMinutes();
 
     return hour + ':' + min;
 }

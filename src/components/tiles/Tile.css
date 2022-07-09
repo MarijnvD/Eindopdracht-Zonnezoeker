@@ -36,3 +36,10 @@
     padding: 20px  20px 20px;
     flex-shrink: 2;
 }
+
+.predictionContent{
+    display:flex;
+    justify-content: space-around;
+    padding: 20px  20px 20px;
+    flex-shrink: 2;
+}

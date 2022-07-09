@@ -7,7 +7,7 @@ import {useHistory} from 'react-router-dom';
 import {AuthContext} from "../../context/AuthContext";
 import {ReactComponent as Logo} from '../../assets/icons/logo.svg';
 
-function Navigation({appName, tab1, tab2, tab3, tab4, tab5, setWeatherData, setPredictiveWeatherData, toggleError}) {
+function Navigation({appName, tab1, tab2, tab3, tab4, setWeatherData, setPredictiveWeatherData, toggleError}) {
     const history = useHistory();
     const {isAuth} = useContext(AuthContext);
     return (
@@ -15,8 +15,8 @@ function Navigation({appName, tab1, tab2, tab3, tab4, tab5, setWeatherData, setP
 
             <div className="upper">
                 <div className="title">
-                    <button  type="button"
-                             onClick={() => history.push('/')}
+                    <button type="button"
+                            onClick={() => history.push('/')}
                     >
                         <Logo className="logo"/>
                     </button>
@@ -28,6 +28,7 @@ function Navigation({appName, tab1, tab2, tab3, tab4, tab5, setWeatherData, setP
                                                        toggleError={toggleError}
                 />
                 </div>
+
                 <div className="toggleBurger">
                     <TemperatureToggle/>
                     <LightDarkToggle/>
@@ -59,6 +60,14 @@ function Navigation({appName, tab1, tab2, tab3, tab4, tab5, setWeatherData, setP
                     >
                         {tab1}
                     </button>
+
+                    <button
+                        type="button"
+                        onClick={() => history.push('/ContactForm')}
+                    >
+                        {tab4}
+                    </button>
+
                     {isAuth &&
                         <>
                             <button
@@ -69,23 +78,10 @@ function Navigation({appName, tab1, tab2, tab3, tab4, tab5, setWeatherData, setP
                             </button>
                             <button
                                 type="button"
-                                onClick={() => history.push('/Days')}
+                                onClick={() => history.push('/Ratings')}
                             >
                                 {tab3}
                             </button>
-                            <button
-                                type="button"
-                                onClick={() => history.push('/Weekend')}
-                            >
-                                {tab4}
-                            </button>
-                            <button
-                                type="button"
-                                onClick={() => history.push('/ContactForm')}
-                            >
-                                {tab5}
-                            </button>
-
                         </>
                     }
                 </div>

@@ -9,7 +9,7 @@ function ContactForm() {
 
     function onFormSubmit(data) {
         console.log(data);
-        window.alert("Je bericht is écht verstuurd en zéker niet alleen in de console gelogged..")
+        window.alert("Je bericht is écht verstuurd en zéker niet alleen in de console gelogd..")
     }
 
     return (
@@ -88,7 +88,6 @@ function ContactForm() {
                                 <label htmlFor="details-message">
                                     <p>Boodschap</p>
                                     <textarea
-                                        type="text"
                                         id="details-message"
                                         rows="10"
                                         cols="40"

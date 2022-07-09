@@ -1,8 +1,6 @@
 import React from 'react';
 import './HumidityTile.css';
 import {ReactComponent as Moisture} from "../../assets/icons/moisture.svg";
-import convertHumidity from "../../helpers/convertHumidity";
-import convertPressure from "../../helpers/convertPressure";
 
 function HumidityTile({humidity, pressure}) {
 
@@ -12,11 +10,11 @@ function HumidityTile({humidity, pressure}) {
                 <tbody>
                 <tr>
                     <th>Luchtvochtigheid: </th>
-                    <td>{convertHumidity(humidity)}</td>
+                    <td>{humidity}</td>
                 </tr>
                 <tr>
                     <th>Luchtdruk: </th>
-                    <td>{convertPressure(pressure)}</td>
+                    <td>{pressure}</td>
                 </tr>
                 </tbody>
             </table>

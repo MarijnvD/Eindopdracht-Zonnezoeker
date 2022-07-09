@@ -12,6 +12,8 @@ import timeConverter from "../helpers/timeConverter";
 import windDirection from "../helpers/windDirection";
 import windDirectionIconMapper from "../helpers/windDirectionIconMapper";
 import {TempContext} from "../context/TempProvider";
+import convertPressure from "../helpers/convertPressure";
+import convertHumidity from "../helpers/convertHumidity";
 
 function Home({weatherData, setWeatherData}) {
 
@@ -65,8 +67,8 @@ function Home({weatherData, setWeatherData}) {
                               colspan={1}
                               rowspan={1}>
 
-                            <HumidityTile humidity={weatherData.main.humidity}
-                                          pressure={weatherData.main.pressure}
+                            <HumidityTile humidity={convertHumidity(weatherData.main.humidity)}
+                                          pressure={convertPressure(weatherData.main.pressure)}
                             />
                         </Tile>
 

@@ -5,12 +5,9 @@ import axios from "axios";
 
 function UploadAvatar({avatar,setAvatar}) {
 
-
     const token = localStorage.getItem("accesToken")
-    // const history = useHistory()
+    const history = useHistory()
     const [avatarInput, setAvatarInput] = useState("")
-
-
 
     async function handleAvatarSubmit(e) {
         e.preventDefault();
@@ -28,7 +25,7 @@ function UploadAvatar({avatar,setAvatar}) {
 
             setAvatar(avatarResponse.data.base64Image)
 
-            // history.push("/Profile")
+            history.push("/Profile")
             // window.location.reload()
 
         } catch (e) {

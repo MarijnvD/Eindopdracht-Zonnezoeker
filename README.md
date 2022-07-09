@@ -22,7 +22,6 @@ ZonneZoeker helps you find the optimal day for your favorite activity, shows you
    2. [Initial Installation](#22-initial-installation)
 3. [Running the app](#3-running-the-app)
    1. [Start](#31-start)
-   2. [Build](#32-build)
 
 ## 1. About the project
 
@@ -39,7 +38,7 @@ ZonneZoeker can also be used as a normal weather application...boring!
 
 ## 2. Getting Started
 
-To get your own ZonneZoeker up and running follow these simple example steps.
+To get your own ZonneZoeker up and running follow the following setup steps.
 
 ### 2.1 Prerequisites
 
@@ -80,9 +79,3 @@ npm run start
 ```
 http://localhost:3000 should automatically open in your standard browser
 
-### 3.2 Build
-Builds the app for production to the build folder. 
-
-```sh
-npm run build
-```
