@@ -43,3 +43,11 @@
     padding: 20px  20px 20px;
     flex-shrink: 2;
 }
+
+.RatingContent{
+    display:flex;
+    font-size: 40px;
+    justify-content: space-around;
+    padding: 20px  20px 20px;
+    flex-shrink: 2;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import {useEffect} from "react";
-import {fetchDailyData, fetchData} from "../helpers/apiCalls";
+import {fetchDailyData} from "../helpers/apiCalls";
 import Tile from "../components/tiles/Tile";
 import bbqRating from "../helpers/ratingHelpers/bbqRating";
 import studyRating from "../helpers/ratingHelpers/studyRating";
@@ -10,6 +10,7 @@ import beachRating from "../helpers/ratingHelpers/beachRating";
 import netflixChillRating from "../helpers/ratingHelpers/netflixChillRating";
 import programmingRating from "../helpers/ratingHelpers/programmingRating";
 import windSurfRating from "../helpers/ratingHelpers/windSurfRating";
+import RatingTile from "../components/tiles/RatingTile";
 
 
 function Ratings({weatherData, setWeatherData}) {
@@ -36,56 +37,56 @@ function Ratings({weatherData, setWeatherData}) {
                     <h2>Rating Pagina</h2>
                     <div className="GeneralPage">
 
-                        <Tile title="Barbeque Cijfer"
+                        <RatingTile title="Barbeque Cijfer"
                               colspan={1}
                               rowspan={1}>
 
                            <p>{bbqRating(weatherData.main.temp, weatherData.wind.speed,0)}</p>
 
-                        </Tile>
-                        <Tile title="Strand Cijfer"
+                        </RatingTile>
+                        <RatingTile title="Strand Cijfer"
                               colspan={1}
                               rowspan={1}>
 
                             <p>{beachRating(weatherData.main.temp, weatherData.wind.speed,0)}</p>
-                        </Tile>
-                        <Tile title="Fiets Cijfer"
+                        </RatingTile>
+                        <RatingTile title="Fiets Cijfer"
                               colspan={1}
                               rowspan={1}>
 
                             <p>{bikeRating(weatherData.main.temp, weatherData.wind.speed,0)}</p>
-                        </Tile>
-                        <Tile title="Wandel Cijfer"
+                        </RatingTile>
+                        <RatingTile title="Wandel Cijfer"
                               colspan={1}
                               rowspan={1}>
 
                             <p>{hikeRating(weatherData.main.temp, weatherData.wind.speed,0)}</p>
-                        </Tile>
-                        <Tile title="Netflix & Chill Cijfer"
+                        </RatingTile>
+                        <RatingTile title="Netflix & Chill Cijfer"
                               colspan={1}
                               rowspan={1}>
 
                             <p>{netflixChillRating(weatherData.main.temp, weatherData.wind.speed,0)}</p>
-                        </Tile>
-                        <Tile title="Studie Cijfer"
+                        </RatingTile>
+                        <RatingTile title="Studie Cijfer"
                               colspan={1}
                               rowspan={1}>
 
                             <p>{studyRating(weatherData.main.temp, weatherData.wind.speed,0)}</p>
-                        </Tile>
+                        </RatingTile>
 
-                        <Tile title="Programmeer Cijfer"
+                        <RatingTile title="Programmeer Cijfer"
                               colspan={1}
                               rowspan={1}>
 
                             <p>{programmingRating(weatherData.main.temp, weatherData.wind.speed,0)}</p>
-                        </Tile>
-                        <Tile title="Windsurf Cijfer"
+                        </RatingTile>
+                        <RatingTile title="Windsurf Cijfer"
                               colspan={1}
                               rowspan={1}>
 
                             <p>{windSurfRating(weatherData.main.temp, weatherData.wind.speed,0)}</p>
-                        </Tile>
+                        </RatingTile>
                     </div>
                 </>}
         </>

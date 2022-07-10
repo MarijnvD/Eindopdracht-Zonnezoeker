@@ -231,17 +231,46 @@ Dit bevestigde voor bij de op tiles gebaseerd ontwerp en ziet er niet alleen op 
 De nadruk op de temperatuur en de simpelheid van 1 zoekbalk en 1 soort tiles heb ik ook terug laten komen in mijn app.
 
 ### 5.2 Wireframes 
-Bevat de gescande op gefotografeerde wireframes, geschetst op papier, van tenminste 5 pagina's\
-deze dienen goed leesbaar te zijn, inclusief begeleidende tekst waarin duidelijk wordt over welke pagina het gaat
+Hieronder staan de op papier gemaakte wireframes.
+Tevens een goed voorbeeld waarom ik heel blij ben met computers en dus niemand meer lastig vaL met mijn handschrift..
 
+![](src/assets/Screenshots/image0.jpeg)
+![](src/assets/Screenshots/image1.jpeg)
+![](src/assets/Screenshots/image2.jpeg)
 ### 5.3 Schermontwerp 
-Bevat screenshots van de schermontwerpen met titels en beschrijvingen.
+Aan de hand van de Wireframes heb ik de volgende designs gemaakt in Figma;
+
+Homepage;
+
+Dit is de hoofdpagina waar iedereen terecht komt en in 1 oogopslag de weer data kan vinden.
+![](src/assets/Screenshots/HomePageZonneZoeker.png)
+
+Predictionpage;
+Dit is de pagina waar allen geregistreerde gebruikers kunnen komen om de komende voorspellingen te zien
+![](src/assets/Screenshots/PredictionPageZonneZoeker.png)
+
+Profilepage;
+Dit is de pagina waar de gebruiker zijn profiel kan bekijken en wijzigingen kan doorvoeren
+![](src/assets/Screenshots/ProfilePageZonneZoeker.png)
+
+Contact/Formpage;
+Dit is de pagina die gebruikt kan worden om de maker van de app te contacteren of waar general user input gevraagd kan worden
+![](src/assets/Screenshots/ContactPageZonneZoeker.png)
+
+Ratingpage;
+
+Dit is de pagina waar allen geregistreerde gebruikers kunnen komen om de door de app gegenereerde ratings te zien
+![](src/assets/Screenshots/RatingPageZonneZoeker.png)
 
 ### 5.4 Figma 
-Aan de hand van alle design informatie ja je schermontwerpen maken in figma/adobe\
-Deze bevatten zodanig veel uitgewerkte details dat je tijdens het programmeren geen ontwerpbeslissingen meer hoeft te maken
+Het was verrassend leuk om het Initiële  ontwerp te maken. Hoewel het duidelijk is dat ontwerpen niet bij sterkte kant is, heb ik van de gelegenheid gebruik gemaakt om Figma te leren kennen.
+Ik vind het een gaaf programma en zal dit zeker blijven gebruiken voor het ontwerpen en prototypen van mijn applicaties.
 
-Opleveren; Het functionele ontwerp (dit document) en een link naar het openbare figma project.
+In het voorgaande hoofdstuk zijn de screendesigns te vinden en hier is een link naar het project;
+
+[Figma Project](https://www.figma.com/file/1XdCKDR7guXorbsJMzu7NU/ZonneZoeker?node-id=0%3A1)
+
+Heb geprobeerd zoveel mogelijk met (Figma)components en het tile ontwerp te werken.
 
 ## 6. Verantwoording ZonneZoeker
 

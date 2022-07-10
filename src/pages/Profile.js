@@ -60,7 +60,7 @@ function Profile({avatar}) {
                         type="button"
                         onClick={() => history.push('/ChangeEmail')}
                     >
-                        Email Wijzigen
+                        Emails Wijzigen
                     </button>
                 </Tile>
 
