@@ -3,7 +3,7 @@ import {Link, useHistory} from 'react-router-dom';
 import Tile from "../components/tiles/Tile";
 import axios from "axios";
 
-function UploadAvatar({avatar,setAvatar}) {
+function UploadAvatar({avatar, setAvatar}) {
 
     const token = localStorage.getItem("accesToken")
     const history = useHistory()
@@ -47,8 +47,11 @@ function UploadAvatar({avatar,setAvatar}) {
                       rowspan={3}>
 
                     <p>Eindelijk de perfecte selfie gemaakt?! Upload hem hier! /br
-                    let op; De afbeelding moet worden aangeleverd in de vorm van een base64-string</p>
-                    <p>Weet je niet hoe? check deze link; https://products.aspose.app/ocr/nl/img-to-base64/jpg</p>
+                        let op; De afbeelding moet worden aangeleverd in de vorm van een base64-string.</p>
+
+                    <p>Zodra ik weet hoe ik gewoon kan implementeren hoe je een normale afbeelding upload zonder deze base54-meuk, implementeer ik dat als eerste....</p>
+
+
 
                     <div className='form'>
                         <form onSubmit={handleAvatarSubmit}>

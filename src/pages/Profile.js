@@ -18,7 +18,7 @@ function Profile({avatar}) {
 
             <div className="GeneralPage">
                 <Tile title="Avatar"
-                      colspan={2}
+                      colspan={3}
                       rowspan={2}>
 
                     <section>
@@ -28,14 +28,14 @@ function Profile({avatar}) {
                             ratings aan verschillende activiteiten!
                         </p>
 
+
+
                         <div>
                             {avatar !== " " &&
 
                                 <img src={base} alt="UserImage"/>}
                         </div>
                     </section>
-
-                    <p>Terug naar de <Link to="/">Homepagina</Link></p>
 
                     <button
                         type="button"

@@ -61,13 +61,6 @@ function Navigation({appName, tab1, tab2, tab3, tab4, setWeatherData, setPredict
                         {tab1}
                     </button>
 
-                    <button
-                        type="button"
-                        onClick={() => history.push('/ContactForm')}
-                    >
-                        {tab4}
-                    </button>
-
                     {isAuth &&
                         <>
                             <button
@@ -84,6 +77,15 @@ function Navigation({appName, tab1, tab2, tab3, tab4, setWeatherData, setPredict
                             </button>
                         </>
                     }
+
+                    <button
+                        type="button"
+                        onClick={() => history.push('/ContactForm')}
+                    >
+                        {tab4}
+                    </button>
+
+
                 </div>
             </div>
         </nav>
