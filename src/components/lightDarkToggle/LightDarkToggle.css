@@ -1,0 +1,63 @@
+.lightSwitch {
+    background-color: #394055;
+    padding: 8px 16px;
+    border-radius: 0 0 2px 2px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fdfdfd;
+    display: flex;
+    flex-direction: row;
+    width: 100px;
+}
+
+.lightSwitch-wrapper {
+    position: relative;
+}
+
+.lightSwitch-label {
+    padding: 0 8px 8px 8px;
+}
+
+.lswitch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    /*height: 60px;*/
+    z-index: 10;
+    opacity: 0;
+}
+
+.lswitch-btn {
+    box-sizing: border-box;
+    position: relative;
+    outline: none;
+    width: 2rem;
+    height: 1.1rem;
+    display: block;
+    cursor: pointer;
+    background: #5a8176;
+    border-radius: 2rem;
+    padding: 3px;
+    transition: all .4s ease;
+}
+
+.lswitch-btn::after {
+    position: relative;
+    left: 0;
+    display: block;
+    content: "";
+    width: 50%;
+    height: 100%;
+    border-radius: 50%;
+    background: white;
+    transition: all .2s ease;
+}
+
+.lswitch:checked + .lswitch-btn {
+    background: #79ABAA;
+}
+
+.lswitch:checked + .lswitch-btn::after {
+    left: 50%;
+}
