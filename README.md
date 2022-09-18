@@ -1,70 +1,86 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  ```sh
+  
+  ______                      ______          _              
+ |___  /                     |___  /         | |             
+    / / ___  _ __  _ __   ___   / / ___   ___| | _____ _ __  
+   / / / _ \| '_ \| '_ \ / _ \ / / / _ \ / _ \ |/ / _ \ '__| 
+  / /_| (_) | | | | | | |  __// /_| (_) |  __/   <  __/ |    
+ /_____\___/|_| |_|_| |_|\___/_____\___/ \___|_|\_\___|_|    
+                                                             
+                                                             
 
-## Available Scripts
+  ```
 
-In the project directory, you can run:
+ZonneZoeker helps you find the optimal day for your favorite activity, shows you the current weather data and helps you plan around it!
 
-### `npm start`
+# Table of contents
+1. [About the Project](#1-about-the-project)
+   1. [Build with](#11-built-with)
+2. [Getting Started](#2-getting-started)
+   1. [Prerequisites](#21-prerequisites)
+   2. [Initial Installation](#22-initial-installation)
+3. [Running the app](#3-running-the-app)
+   1. [Start](#31-start)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 1. About the project
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Are you planning an outside activity? are you afraid the weather will ruin it? with ZonneZoeker you can make sure!
 
-### `npm test`
+With our patented rating system we calculate the ratings for a diverse selection of activities.
+ZonneZoeker can also be used as a normal weather application...boring!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 1.1 Built With
 
-### `npm run build`
+* [React.js](https://reactjs.org/)
+* [Novi Educational Backend](https://github.com/hogeschoolnovi/novi-educational-backend-documentation)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 2. Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To get your own local copy of  ZonneZoeker up and running follow the following setup steps.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2.1 Prerequisites
 
-### `npm run eject`
+**Java Runtime Environment**<br />
+You need to have a JRE (Jave Runtime Environment) installed on you local machine or server
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**IDE (Integrated Development Environment)**<br />
+A IDE is a specially developed tool for software developers to create and maintain their code
+I highly recommend the IDE; Webstorm. This is the IDE I also used to create this project.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Server**<br />
+To run ZonneZoeker you need a server. for now we can use the localhost
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 2.2 Initial Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To initialise ZonneZoeker, follow the next steps;
 
-## Learn More
+1. Clone the project from github. go to https://github.com/MarijnvD/Eindopdracht-Zonnezoeker.git
+   Press the green 'Code'button and copy the link from there
+2. Open Webstorm > File > New > “Project from Version Control”.
+   Press the link from step 1 and press“Clone”.
+3. Install Node.js, NPM. Type ;**npm install npm@latest -g**
+4. Type in the terminal: **npm install**  <br />This installs all the predefined packages.
+5. Type in the terminal: **npm run start** <br />this will start the application in your localhost.
+6. If the page is not opening automatically, go to http://localhost:3000 to view the application in your browser.
+7. Get an API Key from https://openweathermap.org/
+8. Create a .env file in the root folder with the following content;
+    ```sh
+     REACT_APP_API_KEY=***************
+    ```
+    Replace the * 's  for the https://openweathermap.org/ api key, without spaces or quotes. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 3. Running the app
 
-### Code Splitting
+### 3.1 Start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+After you issues the following command in Webstorms' terminal;
 
-### Analyzing the Bundle Size
+```sh
+npm run start
+```
+http://localhost:3000 should automatically open in your standard browser and you full power of ZonneZoeker is available to you!
+If not please see step 3 from 'Initial installation' and take it from there
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To quit, you can press CTRL+C in Webstorm.

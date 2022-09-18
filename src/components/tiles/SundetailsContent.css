@@ -1,0 +1,10 @@
+.sunDetails{
+    display: flex;
+    justify-content: space-around;
+}
+
+.sunDetails table
+{
+    padding-top:25px;
+    height: 30px;
+}

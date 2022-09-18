@@ -1,0 +1,65 @@
+.unitSwitch {
+    background-color: #394055;
+    padding: 8px 16px;
+    border-radius: 0 0 2px 2px;
+
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    width: 100px;
+}
+
+.unitSwitch-wrapper {
+    position: relative;
+}
+
+.unitSwitch-label {
+    padding: 0 8px
+}
+
+.switch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 10;
+    opacity: 0;
+}
+
+.switch-btn {
+    box-sizing: border-box;
+    position: relative;
+    outline: none;
+    width: 2rem;
+    height: 1.1rem;
+    display: block;
+
+    cursor: pointer;
+    background: #4c8476;
+    border-radius: 2rem;
+    padding: 3px;
+    transition: all .4s ease;
+}
+
+.switch-btn::after {
+    position: relative;
+    left: 0;
+    display: block;
+    content: "";
+    width: 50%;
+    height: 100%;
+    border-radius: 50%;
+    background: white;
+    transition: all .2s ease;
+}
+
+.switch:checked + .switch-btn {
+    background: #79ABAA;
+}
+
+.switch:checked + .switch-btn::after {
+    left: 50%;
+}

@@ -1,0 +1,11 @@
+.windDetails
+{
+    display: flex;
+    padding-top:20px;
+
+}
+.windDetails table
+{
+    padding-top:25px;
+    height: 30px;
+}
