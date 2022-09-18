@@ -1,5 +1,5 @@
 import React from 'react';
-import './SundetailsTile.css';
+import './SundetailsContent.css';
 import {ReactComponent as Sun} from "../../assets/icons/sun.svg";
 
 function SunDetailTile({sunRise, sunSet}) {

@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
 import Tile from "../components/tiles/Tile";
 import axios from "axios";
 
@@ -69,7 +68,6 @@ function ChangePassword() {
                             </fieldset>
                         </form>
                     </div>
-                    <p>Vindt je verandering toch maar eng? hier kan je terug naar <Link to="/">Home</Link></p>
 
                 </Tile>
             </div>

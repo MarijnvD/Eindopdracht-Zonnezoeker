@@ -3,13 +3,12 @@ import {Link, useHistory} from 'react-router-dom';
 import {AuthContext} from '../context/AuthContext';
 import './Pages.css';
 import Tile from "../components/tiles/Tile";
+import Button from "../components/button/Button";
 
 function Profile({avatar}) {
 
-
     const {user, logout} = useContext(AuthContext);
     const history = useHistory();
-
     const base = "data:image/png;base64," + avatar
 
     return (
@@ -28,8 +27,6 @@ function Profile({avatar}) {
                             ratings aan verschillende activiteiten!
                         </p>
 
-
-
                         <div>
                             {avatar !== " " &&
 
@@ -37,12 +34,6 @@ function Profile({avatar}) {
                         </div>
                     </section>
 
-                    <button
-                        type="button"
-                        onClick={() => history.push('/UploadAvatar')}
-                    >
-                        Foto uploaden
-                    </button>
                 </Tile>
 
                 <Tile title="Account diensten"
@@ -62,6 +53,16 @@ function Profile({avatar}) {
                     >
                         Emails Wijzigen
                     </button>
+
+                    <button
+                        type="button"
+                        onClick={() => history.push('/UploadAvatar')}
+                    >
+                        Foto uploaden
+                    </button>
+
+                    <Button>
+                    </Button>
                 </Tile>
 
                 <Tile title="Persoonlijke gegevens"
@@ -74,17 +75,7 @@ function Profile({avatar}) {
                         <p>ID: {user.id}</p>
                     </section>
 
-                    <p>Terug naar de <Link to="/">Homepagina</Link></p>
-
-                    <button
-                        type="button"
-                        onClick={logout}
-                    >
-                        Uitloggen
-                    </button>
                 </Tile>
-
-
             </div>
         </>
     );

@@ -4,7 +4,7 @@ import axios from "axios";
 import Tile from "../components/tiles/Tile";
 import {useForm} from "react-hook-form";
 
-function SignUp() {
+function SignUp({toggleToast, setToastText}) {
 
     const {register, handleSubmit, formState: {errors}} = useForm()
     const history = useHistory()
@@ -18,10 +18,15 @@ function SignUp() {
                     password: data.passwordId,
                     username: data.userId,
                 })
+
+            toggleToast(true)
+            setToastText("Registratie succesvol! Je wordt doorgestuurd naar de login pagina!!")
             history.push('/signin')
 
         } catch (data) {
             console.error(data)
+            toggleToast(true)
+            setToastText("Er is iets verkeerd gegaan, controleer je gegevens!")
         }
     }
 

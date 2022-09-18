@@ -3,13 +3,14 @@ import {useForm} from "react-hook-form";
 import Tile from "../components/tiles/Tile";
 import {Link} from "react-router-dom";
 
-function ContactForm() {
+function ContactForm({toggleToast, setToastText}) {
 
     const {register, handleSubmit, formState: {errors}} = useForm();
 
     function onFormSubmit(data) {
-        console.log(data);
-        window.alert("Je bericht is écht verstuurd en zéker niet alleen in de console gelogd..")
+        toggleToast(true)
+        setToastText("De data is compleet en wordt verstuurd, Bedankt!(TEMP. NAKIJKEN; De ingevoerde gegevens staan in de console voor nu!)")
+        console.log(data)
     }
 
     return (

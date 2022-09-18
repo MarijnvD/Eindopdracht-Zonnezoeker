@@ -1,10 +1,10 @@
 import React from 'react';
-import './PercipitationTile.css';
+import './PercipitationContent.css';
 import {ReactComponent as Rain} from '../../assets/icons/rain.svg';
 
 function PrecipitationTile({precipitation}) {
 
-    const noRain = "Geen neerslag verwacht!"
+    const noRain = "Morgen geen neerslag verwacht!"
 
     return (
 

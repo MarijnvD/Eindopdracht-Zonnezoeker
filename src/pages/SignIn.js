@@ -5,7 +5,7 @@ import axios from "axios";
 import Tile from "../components/tiles/Tile";
 
 
-function SignIn() {
+function SignIn({toggleToast, setToastText}) {
     const {login} = useContext(AuthContext);
     const [userName, setUserName] = useState('')
     const [password, setPassword] = useState('')
@@ -21,12 +21,14 @@ function SignIn() {
             })
 
             login(responseData.data.accessToken);
+            toggleToast(true)
+            setToastText("Succesvol ingelogd! ")
+
             history.push('/Profile');
 
         } catch (e) {
-
-            console.error("Error bij inloggen")
-            console.error(e)
+            toggleToast(true)
+            setToastText("Er is iets fout gegaan bij het inloggen, controleer de ingevoerde gegevens! ")
         }
     }
 

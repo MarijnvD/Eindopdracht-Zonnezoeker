@@ -1,7 +1,7 @@
 import React from 'react';
-import './WindTile.css';
+import './WindContent.css';
 
-function WindTile({direction, speed, icon}) {
+function WindContent({direction, speed, icon}) {
 
     return (
         <div className="windDetails">
@@ -25,4 +25,4 @@ function WindTile({direction, speed, icon}) {
     );
 }
 
-export default WindTile;
+export default WindContent;

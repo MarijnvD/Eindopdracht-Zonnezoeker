@@ -1,8 +1,8 @@
 import React from 'react';
-import './LocationTile.css';
+import './LocationContent.css';
 import {ReactComponent as Location} from "../../assets/icons/location.svg";
 
-function LocationTile({location, lon, lat, country}) {
+function LocationContent({location, lon, lat, country}) {
 
     return (
         <div className="locationDetails">
@@ -34,4 +34,4 @@ function LocationTile({location, lon, lat, country}) {
     );
 }
 
-export default LocationTile;
+export default LocationContent;

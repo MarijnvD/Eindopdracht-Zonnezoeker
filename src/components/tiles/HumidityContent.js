@@ -1,8 +1,8 @@
 import React from 'react';
-import './HumidityTile.css';
+import './HumidityContent.css';
 import {ReactComponent as Moisture} from "../../assets/icons/moisture.svg";
 
-function HumidityTile({humidity, pressure}) {
+function HumidityContent({humidity, pressure}) {
 
     return (
         <div className="HumidityDetails">
@@ -27,4 +27,4 @@ function HumidityTile({humidity, pressure}) {
     );
 }
 
-export default HumidityTile;
+export default HumidityContent;

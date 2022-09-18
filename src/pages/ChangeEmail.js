@@ -3,7 +3,7 @@ import {Link, useHistory} from 'react-router-dom';
 import Tile from "../components/tiles/Tile";
 import axios from "axios";
 
-function ChangeEmail() {
+function ChangeEmail({toggleToast, setToastText}) {
 
     const [newEmail, setNewEmail] = useState("")
     const token = localStorage.getItem("accesToken")
@@ -23,13 +23,15 @@ function ChangeEmail() {
                     }
                 })
 
+            toggleToast(true)
+            setToastText("Wachtwoord vervangen Gelukt! Je wordt doorgestuurd naar je profiel")
             history.push("/Profile")
             window.location.reload()
 
         } catch (e) {
 
-            console.error("FOUT IN WACHTWOORD WIJZIGEN")
-            console.error(e)
+            toggleToast(true)
+            setToastText("Wachtwoord vervangen mislukt! Controleer de gegevens")
         }
     }
 

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './SearchBar.css';
 import {fetchDailyData, fetchData, fetchLocationData} from "../../helpers/apiCalls";
 
-function SearchBar({setWeatherData, setPredictiveWeatherData}) {
+function SearchBar({setWeatherData, setPredictiveWeatherData, toggleToast, setToastText}) {
 
     const [query, setQuery] = useState('');
 
@@ -18,8 +18,8 @@ function SearchBar({setWeatherData, setPredictiveWeatherData}) {
 
             setPredictiveWeatherData(predictiveData.data)
         } catch (e) {
-            console.error(e)
-            window.alert("Huidige plaatsnaam niet gevonden! Controleer de spelling van de plaatsnaam. ")
+            toggleToast(true)
+            setToastText("Huidige plaatsnaam niet gevonden! Controleer de spelling van de plaatsnaam. ")
         }
     }
 

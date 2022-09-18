@@ -1,7 +1,7 @@
 import React from 'react';
 import {useEffect} from "react";
 import {fetchData} from "../helpers/apiCalls";
-import PredictionTile from "../components/tiles/PredictionTile";
+import PredictionContent from "../components/tiles/PredictionContent";
 import {useContext} from "react";
 import {TempContext} from "../context/TempProvider";
 import timeConverter from "../helpers/timeConverter";
@@ -9,15 +9,21 @@ import convertHumidity from "../helpers/convertHumidity";
 import convertPressure from "../helpers/convertPressure";
 import windDirectionIconMapper from "../helpers/windDirectionIconMapper";
 
-function Hours({predictiveWeatherData, setPredictiveWeatherData}) {
+function Hours({predictiveWeatherData, setPredictiveWeatherData, toggleToast, setToastText}) {
 
     useEffect(() => {
             async function refreshData() {
-                let lat = 52.092876
-                let lon = 5.104480
 
-                const data = await fetchData(lat, lon)
-                setPredictiveWeatherData(data.data);
+                try {
+                    let lat = 52.092876
+                    let lon = 5.104480
+
+                    const data = await fetchData(lat, lon)
+                    setPredictiveWeatherData(data.data);
+                } catch (e) {
+                    toggleToast(true)
+                    setToastText("Er is iets verkeerd gegaan bij het refreshen van de data, check je connectie!")
+                }
             }
 
             refreshData()
@@ -34,7 +40,7 @@ function Hours({predictiveWeatherData, setPredictiveWeatherData}) {
                     <h2>Voorspelling voor de volgende 48 uur</h2>
                     <div className="GeneralPage">
                         {hourPrediction.map((hourArray) => {
-                            return <PredictionTile
+                            return <PredictionContent
                                 key={hourArray.dt}
                                 temp={kelvinToMetric(hourArray.temp)}
                                 title={timeConverter(hourArray.dt)}

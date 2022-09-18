@@ -7,13 +7,13 @@ import {useHistory} from 'react-router-dom';
 import {AuthContext} from "../../context/AuthContext";
 import {ReactComponent as Logo} from '../../assets/icons/logo.svg';
 
-function Navigation({appName, tab1, tab2, tab3, tab4, setWeatherData, setPredictiveWeatherData, toggleError}) {
+function Navigation({appName, tab1, tab2, tab3, tab4, setWeatherData, setPredictiveWeatherData, toggleToast, setToastText}) {
     const history = useHistory();
     const {isAuth} = useContext(AuthContext);
     return (
-        <nav className="navigation">
+        <header className="navigation">
 
-            <div className="upper">
+            <nav className="upper">
                 <div className="title">
                     <button type="button"
                             onClick={() => history.push('/')}
@@ -25,13 +25,14 @@ function Navigation({appName, tab1, tab2, tab3, tab4, setWeatherData, setPredict
 
                 <div className="searchMenu"><SearchBar setWeatherData={setWeatherData}
                                                        setPredictiveWeatherData={setPredictiveWeatherData}
-                                                       toggleError={toggleError}
+                                                       toggleToast={toggleToast}
+                                                       setToastText={setToastText}
                 />
                 </div>
 
                 <div className="toggleBurger">
                     <TemperatureToggle/>
-                    <LightDarkToggle/>
+                    {/*<LightDarkToggle/>*/}
 
                     {isAuth ?
                         <button
@@ -48,7 +49,7 @@ function Navigation({appName, tab1, tab2, tab3, tab4, setWeatherData, setPredict
                             Inloggen
                         </button>}
                 </div>
-            </div>
+            </nav>
 
             <div className="tabs">
 
@@ -88,7 +89,7 @@ function Navigation({appName, tab1, tab2, tab3, tab4, setWeatherData, setPredict
 
                 </div>
             </div>
-        </nav>
+        </header>
     );
 }
 

@@ -34,48 +34,53 @@ ZonneZoeker can also be used as a normal weather application...boring!
 
 * [React.js](https://reactjs.org/)
 * [Novi Educational Backend](https://github.com/hogeschoolnovi/novi-educational-backend-documentation)
-* Blood, sweat & royal amounts of tears
 
 ## 2. Getting Started
 
-To get your own ZonneZoeker up and running follow the following setup steps.
+To get your own local copy of  ZonneZoeker up and running follow the following setup steps.
 
 ### 2.1 Prerequisites
 
-To initialise ZonneZoeker, you need to install npm. <br/>
-You also need an API-key from openweather.com
+**Java Runtime Environment**<br />
+You need to have a JRE (Jave Runtime Environment) installed on you local machine or server
 
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+**IDE (Integrated Development Environment)**<br />
+A IDE is a specially developed tool for software developers to create and maintain their code
+I highly recommend the IDE; Webstorm. This is the IDE I also used to create this project.
+
+**Server**<br />
+To run ZonneZoeker you need a server. for now we can use the localhost
 
 ### 2.2 Initial Installation
 
-1. Get an API Key from https://openweathermap.org/ (For a limited time only, a complimentary key is provided for you!)
-2. Clone ZonneZoeker;
-   ```sh
-   git clone https://github.com/MarijnvD/Eindopdracht-Zonnezoeker.git
-   ```
-3. Create a .env file in the root folder with the following content;
-   ```sh
-    REACT_APP_API_KEY=***************
-   ```
-   Replace the * 's  for the https://openweathermap.org/ api key, without spaces or quotes. (When the complimentary time is over)
+To initialise ZonneZoeker, follow the next steps;
 
-5. Install NPM-packages;
-   ```sh
-   npm install
-   ```
+1. Clone the project from github. go to https://github.com/MarijnvD/Eindopdracht-Zonnezoeker.git
+   Press the green 'Code'button and copy the link from there
+2. Open Webstorm > File > New > “Project from Version Control”.
+   Press the link from step 1 and press“Clone”.
+3. Install Node.js, NPM. Type ;**npm install npm@latest -g**
+4. Type in the terminal: **npm install**  <br />This installs all the predefined packages.
+5. Type in the terminal: **npm run start** <br />this will start the application in your localhost.
+6. If the page is not opening automatically, go to http://localhost:3000 to view the application in your browser.
+7. Get an API Key from https://openweathermap.org/
+8. Create a .env file in the root folder with the following content;
+    ```sh
+     REACT_APP_API_KEY=***************
+    ```
+    Replace the * 's  for the https://openweathermap.org/ api key, without spaces or quotes. 
+
 
 ## 3. Running the app
 
 ### 3.1 Start
 
-Enter the following command in the terminal;
+After you issues the following command in Webstorms' terminal;
 
 ```sh
 npm run start
 ```
-http://localhost:3000 should automatically open in your standard browser
+http://localhost:3000 should automatically open in your standard browser and you full power of ZonneZoeker is available to you!
+If not please see step 3 from 'Initial installation' and take it from there
 
+To quit, you can press CTRL+C in Webstorm.

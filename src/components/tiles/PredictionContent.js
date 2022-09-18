@@ -1,7 +1,7 @@
 import React from 'react';
 import './Tile.css';
 
-function PredictionTile({title, rowspan, colspan, temp, feelsLike, pressure, humidity, icon, windtest}) {
+function PredictionContent({title, rowspan, colspan, temp, feelsLike, pressure, humidity, icon, windtest}) {
 
     return (
         <div className={"tile rowspan" + rowspan + " colspan" + colspan}>
@@ -38,5 +38,5 @@ function PredictionTile({title, rowspan, colspan, temp, feelsLike, pressure, hum
     );
 }
 
-export default PredictionTile;
+export default PredictionContent;
 

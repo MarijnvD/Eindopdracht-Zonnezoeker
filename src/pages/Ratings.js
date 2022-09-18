@@ -10,22 +10,29 @@ import beachRating from "../helpers/ratingHelpers/beachRating";
 import netflixChillRating from "../helpers/ratingHelpers/netflixChillRating";
 import programmingRating from "../helpers/ratingHelpers/programmingRating";
 import windSurfRating from "../helpers/ratingHelpers/windSurfRating";
-import RatingTile from "../components/tiles/RatingTile";
 
 
-function Ratings({weatherData, setWeatherData}) {
+
+function Ratings({weatherData, setWeatherData, toggleToast, setToastText}) {
 
     useEffect(() => {
+
+
             async function refreshData() {
 
-                // Default values zodat ook zonder query de app volledig beschikbaar is
-                let lat = 52.092876
-                let lon = 5.104480
+                try {
+                    // Default values zodat ook zonder query de app volledig beschikbaar is
+                    let lat = 52.092876
+                    let lon = 5.104480
 
-                const data = await fetchDailyData(lat, lon)
-                setWeatherData(data.data);
+                    const data = await fetchDailyData(lat, lon)
+                    setWeatherData(data.data);
+
+                } catch (e) {
+                    toggleToast(true)
+                    setToastText("Er is iets verkeerd gegaan bij het refreshen van de data, check je connectie!")
+                }
             }
-
             refreshData()
         }
         , []);
@@ -37,56 +44,64 @@ function Ratings({weatherData, setWeatherData}) {
                     <h2>Rating Pagina</h2>
                     <div className="GeneralPage">
 
-                        <RatingTile title="Barbeque Cijfer"
+                        <Tile title="Barbeque Cijfer"
+                                       colspan={1}
+                                       rowspan={1}>
+
+                            <h4>{bbqRating(weatherData.main.temp, weatherData.wind.speed, 0)}</h4>
+
+                        </Tile>
+                        <Tile title="Strand Cijfer"
+                                       colspan={1}
+                                       rowspan={1}>
+
+                            <h4>{beachRating(weatherData.main.temp, weatherData.wind.speed, 0)}</h4>
+                        </Tile>
+                        <Tile title="Fiets Cijfer"
+                                       colspan={1}
+                                       rowspan={1}>
+
+                            <h4>{bikeRating(weatherData.main.temp, weatherData.wind.speed, 0)}</h4>
+                        </Tile>
+                        <Tile title="Wandel Cijfer"
+                                       colspan={1}
+                                       rowspan={1}>
+
+                            <h4>{hikeRating(weatherData.main.temp, weatherData.wind.speed, 0)}</h4>
+                        </Tile>
+                        <Tile title="Netflix & Chill Cijfer"
+                                       colspan={1}
+                                       rowspan={1}>
+
+                            <h4>{netflixChillRating(weatherData.main.temp, weatherData.wind.speed, 0)}</h4>
+                        </Tile>
+                        <Tile title="Studie Cijfer"
+                                       colspan={1}
+                                       rowspan={1}>
+
+                            <h4>{studyRating(weatherData.main.temp, weatherData.wind.speed, 0)}</h4>
+                        </Tile>
+
+                        <Tile title="Programmeer Cijfer"
+                                       colspan={1}
+                                       rowspan={1}>
+
+                            <h4>{programmingRating(weatherData.main.temp, weatherData.wind.speed, 0)}</h4>
+                        </Tile>
+                        <Tile title="Windsurf Cijfer"
+                                       colspan={1}
+                                       rowspan={1}>
+
+                            <h4>{windSurfRating(weatherData.main.temp, weatherData.wind.speed, 0)}</h4>
+                        </Tile>
+
+                        <Tile title="Terras Cijfer"
                               colspan={1}
                               rowspan={1}>
 
-                           <p>{bbqRating(weatherData.main.temp, weatherData.wind.speed,0)}</p>
+                            <h4>{bbqRating(weatherData.main.temp, weatherData.wind.speed, 0)}</h4>
 
-                        </RatingTile>
-                        <RatingTile title="Strand Cijfer"
-                              colspan={1}
-                              rowspan={1}>
-
-                            <p>{beachRating(weatherData.main.temp, weatherData.wind.speed,0)}</p>
-                        </RatingTile>
-                        <RatingTile title="Fiets Cijfer"
-                              colspan={1}
-                              rowspan={1}>
-
-                            <p>{bikeRating(weatherData.main.temp, weatherData.wind.speed,0)}</p>
-                        </RatingTile>
-                        <RatingTile title="Wandel Cijfer"
-                              colspan={1}
-                              rowspan={1}>
-
-                            <p>{hikeRating(weatherData.main.temp, weatherData.wind.speed,0)}</p>
-                        </RatingTile>
-                        <RatingTile title="Netflix & Chill Cijfer"
-                              colspan={1}
-                              rowspan={1}>
-
-                            <p>{netflixChillRating(weatherData.main.temp, weatherData.wind.speed,0)}</p>
-                        </RatingTile>
-                        <RatingTile title="Studie Cijfer"
-                              colspan={1}
-                              rowspan={1}>
-
-                            <p>{studyRating(weatherData.main.temp, weatherData.wind.speed,0)}</p>
-                        </RatingTile>
-
-                        <RatingTile title="Programmeer Cijfer"
-                              colspan={1}
-                              rowspan={1}>
-
-                            <p>{programmingRating(weatherData.main.temp, weatherData.wind.speed,0)}</p>
-                        </RatingTile>
-                        <RatingTile title="Windsurf Cijfer"
-                              colspan={1}
-                              rowspan={1}>
-
-                            <p>{windSurfRating(weatherData.main.temp, weatherData.wind.speed,0)}</p>
-                        </RatingTile>
+                        </Tile>
                     </div>
                 </>}
         </>

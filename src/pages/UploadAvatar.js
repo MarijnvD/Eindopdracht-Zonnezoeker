@@ -3,7 +3,7 @@ import {Link, useHistory} from 'react-router-dom';
 import Tile from "../components/tiles/Tile";
 import axios from "axios";
 
-function UploadAvatar({avatar, setAvatar}) {
+function UploadAvatar({avatar, setAvatar, toggleToast,setToastText}) {
 
     const token = localStorage.getItem("accesToken")
     const history = useHistory()
@@ -25,13 +25,15 @@ function UploadAvatar({avatar, setAvatar}) {
 
             setAvatar(avatarResponse.data.base64Image)
 
+            toggleToast(true)
+            setToastText("Avatar vervangen gelukt! geniet ervan!")
             history.push("/Profile")
             // window.location.reload()
 
         } catch (e) {
 
-            console.error("Fout in Avatar wijzigen")
-            console.error(e)
+            toggleToast(true)
+            setToastText("Avatar vervangen mislukt! Controleer je string!")
         }
     }
 

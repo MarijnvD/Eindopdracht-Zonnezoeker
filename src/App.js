@@ -18,15 +18,17 @@ import ChangeEmail from "./pages/ChangeEmail";
 import UploadAvatar from "./pages/UploadAvatar";
 import Hours from "./pages/Hours";
 import ContactForm from "./pages/ContactForm";
+import Toast from "./components/Toast";
+import Footer from "./components/footer/Footer";
 
 function App() {
 
     const { isAuth } = useContext(AuthContext);
     const [weatherData, setWeatherData] = useState("");
     const [predictiveWeatherData, setPredictiveWeatherData] = useState("");
-    const [error, toggleError] = useState(false)
     const [avatar, setAvatar] = useState(" ")
-    const [toast, setToast] = useState(false)
+    const [toast, toggleToast] = useState(false)
+    const [toastText, setToastText] = useState("")
 
     return (
         <>
@@ -38,44 +40,85 @@ function App() {
                 tab4="Contact"
                 setWeatherData={setWeatherData}
                 setPredictiveWeatherData={setPredictiveWeatherData}
-                toggleError={toggleError}
+                toggleToast={toggleToast}
+                setToastText={setToastText}
             />
+
+
 
                 <Switch>
                     <Route exact path="/">
-                        <Home weatherData={weatherData} setWeatherData={setWeatherData}/>
+                        <Home weatherData={weatherData}
+                              setWeatherData={setWeatherData}
+                              toggleToast={toggleToast}
+                              setToastText={setToastText}/>
                     </Route>
                     <Route exact path ="/Hours">
-                        {isAuth ? <Hours predictiveWeatherData={predictiveWeatherData} setPredictiveWeatherData={setPredictiveWeatherData}/> : <Redirect to="/" />}
+                        {isAuth ? <Hours predictiveWeatherData={predictiveWeatherData}
+                                         setPredictiveWeatherData={setPredictiveWeatherData}
+                                         toggleToast={toggleToast}
+                                         setToastText={setToastText}/> : <Redirect to="/" />}
                     </Route>
                     <Route exact path="/Ratings">
-                        {isAuth ? <Ratings weatherData={weatherData} setWeatherData={setWeatherData}/> : <Redirect to="/" />}
+                        {isAuth ? <Ratings weatherData={weatherData}
+                                           setWeatherData={setWeatherData}
+                                           toggleToast={toggleToast}
+                                           setToastText={setToastText}/> : <Redirect to="/" />}
                     </Route>
                     <Route exact path="/SignIn">
-                        <SignIn />
+                        <SignIn toggleToast={toggleToast}
+                                setToastText={setToastText}/>
                     </Route>
                     <Route exact path="/SignUp">
-                        <SignUp />
+                        <SignUp
+                            toggleToast={toggleToast}
+                            setToastText={setToastText}/>
                     </Route>
                     <Route exact path="/Privacy">
                         <Privacy />
                     </Route>
                     <Route exact path="/ContactForm">
-                        <ContactForm />
+                        <ContactForm toggleToast={toggleToast}
+                                     setToastText={setToastText}/>
                     </Route>
                     <Route exact path="/Profile">
                         {isAuth ? <Profile avatar={avatar} /> : <Redirect to="/" />}
                     </Route>
                     <Route exact path="/ChangePassword">
-                        {isAuth ? <ChangePassword /> : <Redirect to="/" />}
+                        {isAuth ? <ChangePassword
+                            toggleToast={toggleToast}
+                            setToastText={setToastText}/> : <Redirect to="/" />}
                     </Route>
                     <Route exact path="/ChangeEmail">
-                        {isAuth ? <ChangeEmail /> : <Redirect to="/" />}
+                        {isAuth ? <ChangeEmail
+                            toggleToast={toggleToast}
+                            setToastText={setToastText}/> : <Redirect to="/" />}
                     </Route>
                     <Route exact path="/UploadAvatar">
-                        {isAuth ? <UploadAvatar avatar={avatar} setAvatar={setAvatar} /> : <Redirect to="/" />}
+                        {isAuth ? <UploadAvatar avatar={avatar}
+                                                setAvatar={setAvatar}
+                                                toggleToast={toggleToast}
+                                                setToastText={setToastText}/> : <Redirect to="/" />}
                     </Route>
                 </Switch>
+
+            <Footer copyright="© Zonnezoeker Eindproject"
+                    name="Marijn van Dorp"
+                    description= "ZonneZoeker is het eindproject voor Hogeschool Novi, het is een applicatie die de gebruiker in één enkele oogopslag alle relevante weer-data overzichtelijk laat zien en ook door een gepatenteerd rating systeem verteld hoe deze weergegevens geïnterpreteerd dienen te worden."
+                    title= "ZonneZoeker"
+
+            />
+
+
+
+
+
+
+
+
+            <Toast trigger={toast} setTrigger={toggleToast}>
+                <h3>{toastText}</h3>
+            </Toast>
         </>
     );
 }

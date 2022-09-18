@@ -1,7 +1,7 @@
 import React from 'react';
-import './SummaryTile.css';
+import './SummaryContent.css';
 
-function SummaryTile({temp, feelsAs, icon, description}) {
+function SummaryContent({temp, feelsAs, icon, description}) {
 
     return (
         <>
@@ -22,4 +22,4 @@ function SummaryTile({temp, feelsAs, icon, description}) {
     );
 }
 
-export default SummaryTile;
+export default SummaryContent;
